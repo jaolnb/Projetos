@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="calc">
+            <div class="container">
+                <div id="display"></div>
+            </div>
+            <div class="box-wrapper">
+                <div class="box" id="sete">
+                    7
+                </div>
+                <div class="box" id="oito">
+                    8
+                </div>
+                <div class="box" id="nove">
+                    9
+                </div>
+                <div class="box" id="quatro">
+                    4
+                </div>
+        
+                <div class="box" id="cinco">
+                    5
+                </div>
+                <div class="box" id="seis">
+                    6
+                </div>
+                <div class="box" id="um">
+                    1
+                </div>
+                <div class="box" id="dois">
+                    2
+                </div>
+                <div class="box" id="tres">
+                    3
+                </div>
+                <div class="box" id="zero">
+                    0
+                </div>
+                <div class="box" id="o_add">
+                    +
+                </div>
+                <div class="box" id="o_sub">
+                    -
+                </div>
+                <div class="box" id="o_mul">
+                    X
+                </div>
+                <div class="box" id="o_per">
+                    %
+                </div>
+                <div class="box" id="o_div">
+                    ÷
+                </div>
+                <div class="box" id="o_del">
+                    DEL
+                </div>
+                <div class="box" id="o_lim">
+                    LIMPAR
+                </div>
+                <div class="box" id="o_res">
+                    =
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+    
+    <script>
+        const sete = document.getElementById("sete")
+        sete.addEventListener("click", function() {
+            document.getElementById("display").innerHTML += "7"})
+
+        const oito = document.getElementById("oito")
+        oito.addEventListener("click", function() {
+            document.getElementById("display").innerHTML += "8"})
+
+        const nove = document.getElementById("nove")
+        nove.addEventListener("click", function() {
+            document.getElementById("display").innerHTML += "9"})
+
+        const quatro = document.getElementById("quatro")
+        quatro.addEventListener("click", function() {
+            document.getElementById("display").innerHTML += "4"})
+        
+        const cinco = document.getElementById("cinco")
+        cinco.addEventListener("click", function() {
+            document.getElementById("display").innerHTML += "5"})
+
+        const seis = document.getElementById("seis")
+        seis.addEventListener("click", function() {
+            document.getElementById("display").innerHTML += "6"})
+
+        const um = document.getElementById("um")
+        um.addEventListener("click", function() {
+            document.getElementById("display").innerHTML += "1"})
+
+        const dois = document.getElementById("dois")
+        dois.addEventListener("click", function() {
+            document.getElementById("display").innerHTML += "2"})
+
+        const tres = document.getElementById("tres")
+        tres.addEventListener("click", function() {
+            document.getElementById("display").innerHTML += "3"})
+
+        const zero = document.getElementById("zero")
+        zero.addEventListener("click", function() {
+            document.getElementById("display").innerHTML += "0"})
+
+        const add = document.getElementById("o_add")
+        add.addEventListener("click", function() {
+            document.getElementById("display").innerHTML += "+"})
+
+        const sub = document.getElementById("o_sub")
+        sub.addEventListener("click", function() {
+            document.getElementById("display").innerHTML += "-"})
+
+        const mul = document.getElementById("o_mul")
+        mul.addEventListener("click", function() {
+            document.getElementById("display").innerHTML += "*"})
+
+        const per = document.getElementById("o_per")
+        per.addEventListener("click", percentual)
+
+            function percentual() {
+                var display = document.getElementById("display")
+                display.innerHTML = eval(display.innerHTML + "/100")
+            }
+
+        const div = document.getElementById("o_div")
+        div.addEventListener("click", function() {
+            document.getElementById("display").innerHTML += "/"})
+
+        document.getElementById("o_lim").addEventListener("click", function(){
+        document.getElementById("display").innerHTML = ""})
+
+        const del = document.getElementById("o_del")
+        del.addEventListener("click", function(){
+            document.getElementById("display").innerHTML = document.getElementById("display").innerHTML.slice(0, -1)
+        })
+
+        const resultado = document.getElementById("o_res")
+        resultado.addEventListener("click", operar)
+
+        function operar(){
+            var numero = document.getElementById("display").textContent
+            var resul = eval(numero)
+            document.getElementById("display").innerHTML = resul
+        }
+       </script>    
+    
+</body>
+</html>
